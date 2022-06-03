@@ -1,0 +1,40 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <TargetFramework>net6.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <IsPackable>false</IsPackable>
+        <Company>FLio</Company>
+        <Product>Updater</Product>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="../FLio.Updater.Client/FLio.Updater.Client.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="FluentFTP" Version="37.0.2" />
+        <PackageReference Include="Microsoft.Extensions.FileProviders.Embedded" Version="6.0.5" />
+        <PackageReference Include="Microsoft.Extensions.Configuration" Version="6.0.1" />
+        <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="6.0.0" />
+        <PackageReference Include="Microsoft.Extensions.Hosting" Version="6.0.1" />
+        <PackageReference Include="Microsoft.Extensions.Options.DataAnnotations" Version="6.0.0" />
+        <PackageReference Include="NLog.Extensions.Logging" Version="5.0.0" />
+        <PackageReference Include="PipeMethodCalls" Version="3.1.1" />
+        <PackageReference Include="PipeMethodCalls.MessagePack" Version="3.0.2" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <None Remove="dist/**" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <None Update="nlog.config">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </None>
+        
+        <EmbeddedResource Include="updater*.json" />
+    </ItemGroup>
+
+</Project>

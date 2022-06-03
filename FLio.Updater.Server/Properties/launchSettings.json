@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "tui.monitor.Cli.Loader": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "DOTNET_ENVIRONMENT": "Development"
+      }
+    }
+  }
+}

@@ -1,0 +1,8 @@
+.vs
+.idea
+.vscode
+dist
+bin
+obj
+TestResults
+updater.json

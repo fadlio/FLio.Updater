@@ -1,0 +1,121 @@
+{
+  "$schema": "https://json-schema.org/draft-04/schema",
+  "title": "Product",
+  "type": "object",
+  "properties": {
+    "General": {
+      "type": "object",
+      "properties": {
+        "ApplicationName": {
+          "type": "string"
+        },
+        "EnforceLastVersion": {
+          "type": "boolean",
+          "default": false
+        },
+        "Sources": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "Type": {
+                "type": "string",
+                "enum": [
+                  "FTP",
+                  "Local"
+                ]
+              },
+              "Uri": {
+                "type": "string"
+              },
+              "Username": {
+                "type": "string"
+              },
+              "Password": {
+                "type": "string"
+              },
+              "ExtraPath": {
+                "description": "Used by the FTP client",
+                "type": "string"
+              }
+            },
+            "required": [
+              "Type",
+              "Uri"
+            ]
+          },
+          "minItems": 1
+        },
+        "ArgsPassthrough": {
+          "type": "boolean",
+          "default": false
+        }
+      },
+      "required": [
+        "ApplicationName",
+        "Sources"
+      ]
+    },
+    "Ipc": {
+      "type": "object",
+      "properties": {
+        "NotifyUpdate": {
+          "type": "boolean",
+          "default": false
+        },
+        "AutoReopen": {
+          "type": "number",
+          "minimum": 1,
+          "default": null
+        }
+      }
+    },
+    "Timers": {
+      "type": "object",
+      "properties": {
+        "Update": {
+          "type": "number",
+          "minimum": 1,
+          "default": 300
+        },
+        "AutoReopen": {
+          "type": "number",
+          "minimum": 1,
+          "default": null
+        }
+      }
+    },
+    "Visuals": {
+      "type": "object",
+      "properties": {
+        "AddToDesktop": {
+          "type": "boolean",
+          "default": false
+        },
+        "AutoReopen": {
+          "type": "boolean",
+          "default": false
+        },
+        "Hidden": {
+          "type": "boolean",
+          "default": false
+        },
+        "ShowSplashScreen": {
+          "type": "boolean",
+          "default": false
+        }
+      }
+    },
+    "RegistryFiles": {
+      "type": "array",
+      "items": [
+        {
+          "type": "string"
+        }
+      ]
+    }
+  },
+  "required": [
+    "General"
+  ]
+}

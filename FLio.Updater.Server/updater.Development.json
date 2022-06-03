@@ -1,0 +1,17 @@
+{
+  "$schema": "updater.schema.json",
+  "General": {
+    "ApplicationName": "FLio.Updater.TestClient",
+    "EnforceLastVersion": true,
+    "Sources": [
+      {
+        "Type": "Local",
+        "Uri": "C:/temp/tui-client"
+      }
+    ]
+  },
+  "Timers": {
+    "AutoReopen": 10,
+    "Update": 10
+  }
+}
